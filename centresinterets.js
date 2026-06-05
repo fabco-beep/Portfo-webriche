@@ -14,7 +14,7 @@ function afficherInteret(type) {
             case 'photo':
                 imageSrc1 = "2021-08-11-14-18-10.jpg";
                 imageSrc3 = "2021-08-05-11-12-45.jpg"; 
-                imageSrc4 = "insecte.JPG";
+                imageSrc4 = "IMG_8370.JPG";
                 description = "'J'aime prendre des photos'";
                 zoneMedia.innerHTML = `
                 <div class="cadre-photo">
