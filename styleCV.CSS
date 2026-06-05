@@ -1,0 +1,863 @@
+/* ==========================================================================
+   1. VARIABLES & POLICES (Thème Monochrome & Bleu)
+   ========================================================================== */
+:root {
+    --bg-color: 000000#;       /* Gris très clair pour le fond de page */
+    --surface-color: #ffffff;  /* Blanc pour les cartes d'expérience */
+    --text-main: #212529;      /* Gris anthracite presque noir pour le texte */
+    --text-muted: #6c757d;     /* Gris moyen pour les sous-titres/notes */
+    --border-color: #dee2e6;   /* Gris clair pour les séparateurs */
+    
+    /* Déclinaisons de Bleu (La touche de couleur) */
+    --blue-primary: #0056b3;   /* Bleu acier pour les éléments importants */
+    --blue-hover: #004085;     /* Bleu plus foncé pour les survols */
+    --blue-light: #e7f1ff;     /* Bleu très clair pour les fonds discrets */
+}
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 50px;
+    /* 1. La page démarre invisible et légèrement décalée vers le bas */
+    opacity: 0;
+    transform: translateY(10px);
+    
+    /* 2. On configure la transition : 0.8 seconde de douceur absolue */
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+
+/* 3. La classe qui sera activée en JavaScript dès que tout est prêt */
+body.chargee {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   2. BANNIÈRE & NAVIGATION
+   ========================================================================== */
+.zonebanniere {
+    background-color: #1a1e21; /* Gris très sombre / noir */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rangeeboutons nav {
+    display: flex;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.boutonBanniere {
+    color: #e9ecef;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.boutonBanniere:hover {
+    background-color: var(--blue-primary);
+    color: white;
+}
+
+/* ==========================================================================
+   3. SECTION PRÉSENTATION / HERO
+   ========================================================================== */
+.presentation {
+    position: relative;
+    color: black;
+    padding: 0 5%;
+    overflow: hidden;
+    background-image: url("IMG_7853bis.JPG");
+    background-size: 100% 100%;  
+    align-items: center;
+}
+
+
+
+.textecentral {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin-top: 10%;
+    margin-bottom: 30%;
+    align-items: center;
+ 
+}
+
+.textecentral h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2%;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.textecentral p {
+    font-size: 1.1rem;
+    color: #f8f9fa;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   4. TITRES PRINCIPAUX
+   ========================================================================== */
+h1 {
+    max-width: 1100px;
+    margin: 40px auto 20px auto;
+    padding: 0 20px;
+    font-size: 1.8rem;
+    color: #343a40;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 5px solid var(--blue-primary); /* Ligne bleue distinctive */
+}
+
+/* ==========================================================================
+   5. SECTION EXPERIENCES
+   ========================================================================== */
+.sectionexperiences {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espace entre les cartes */
+}
+
+.experiencePro {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.experiencePro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    border-color: #ced4da;
+}
+
+.experiencePro h3 {
+    color: var(--blue-primary);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.experiencePro h4 {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Bouton / Logo entreprise */
+.boutonentreprise {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: border-color 0.2s;
+}
+
+.boutonentreprise:hover {
+    border-color: var(--blue-primary);
+}
+
+.boutonentreprise img {
+    max-width: 100%;
+    height: auto; /* Permet de garder le ratio sans écraser le logo */
+    display: block;
+}
+
+/* Listes à puces */
+.experiencePro ul {
+    list-style-type: none; /* Enlève les puces par défaut */
+    padding-left: 0;
+}
+
+.experiencePro li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #495057;
+}
+
+/* Création d'une puce personnalisée bleue */
+.experiencePro li::before {
+    content: "•";
+    color: var(--blue-primary);
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (Adaptation Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .rangeeboutons nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .boutonBanniere {
+        width: 100%;
+        text-align: center;
+        margin: 2px 0;
+    }
+
+    .textecentral h1 {
+        font-size: 2rem;
+    }
+    
+    .experiencePro {
+        padding: 15px;
+    }
+}
+
+/* ==========================================================================
+   7. SPECIFICITÉS PAGE CONTACT (Réseaux & Formulaire)
+   ========================================================================== */
+
+/* Ajustement du titre "CONTACT" ou "Mes Réseaux" */
+.textecontacts {
+    text-align: center;
+    margin: 40px auto 20px auto;
+    max-width: 600px;
+    color: white;
+}
+
+.textecontacts h1 {
+    /* Reprend le style exact des h1 de l'index */
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 5px solid var(--blue-primary);
+    padding-left: 15px;
+    text-align: left;
+    color: white;
+}
+
+/* Domptage du logo LinkedIn géant */
+.boutonreseau img {
+    width: 70px; /* Taille propre et pro */
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Centre le logo */
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.boutonreseau img:hover {
+    transform: scale(1.08); /* Léger effet dynamique au survol */
+    filter: brightness(0.9); /* Assombrit très légèrement le bleu au survol */
+}
+
+/* Mise en page de la boîte du formulaire (Format Carte) */
+.zoneformulaire {
+    max-width: 600px;
+    margin: 30px auto 60px auto; /* Centre le bloc sur la page */
+    padding: 30px;
+    background-color: var(--surface-color); /* Fond blanc comme les exp pro */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.zoneformulaire h3 {
+    font-size: 1.3rem;
+    color: #343a40;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Nettoyage de la liste HTML */
+.zoneformulaire ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.zoneformulaire li {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Label au-dessus du champ */
+    gap: 6px;
+}
+
+/* Style des étiquettes (Nom, E-mail...) */
+.zoneformulaire label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+/* Design des champs de texte */
+.zoneformulaire input[type="text"],
+.zoneformulaire input[type="email"],
+.zoneformulaire textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: #f8f9fa; /* Gris très clair */
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+/* Effet focus quand on clique pour écrire */
+.zoneformulaire input:focus,
+.zoneformulaire textarea:focus {
+    outline: none;
+    border-color: var(--blue-primary); /* Le fameux bleu acier */
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15); /* Halo bleu discret */
+}
+
+/* Contrainte sur la zone de message */
+.zoneformulaire textarea {
+    min-height: 130px;
+    resize: vertical; /* Permet d'agrandir uniquement vers le bas */
+}
+
+/* Alignement et design du bouton "Envoyer" */
+.zoneformulaire .button {
+    text-align: right; /* Aligné à droite dans la carte */
+    margin-top: 20px;
+}
+
+.zoneformulaire button[type="submit"] {
+    background-color: var(--blue-primary); /* Fond bleu */
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.zoneformulaire button[type="submit"]:hover {
+    background-color: var(--blue-hover); /* Bleu plus foncé */
+}
+
+.zoneformulaire button[type="submit"]:active {
+    transform: scale(0.98); /* Effet bouton enfoncé */
+}
+
+/* ==========================================================================
+   8. PAGE PARCOURS SCOLAIRE
+   ========================================================================== */
+
+/* Conteneur principal de la page */
+.parcoursscolaire {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espace entre chaque diplôme */
+}
+
+/* Le titre principal "Parcours scolaire" */
+.parcoursscolaire h2:first-child {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 5px solid var(--blue-primary); /* Ligne bleue comme sur l'index */
+    padding-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-align: left;
+
+}
+
+/* Chaque bloc de diplôme (effet carte blanche) */
+.etablissement {
+    background-color: var(--surface-color); /* Blanc */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.etablissement:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    border-color: #ced4da;
+}
+
+/* Domptage des logos des écoles */
+.boutonecole {
+    display: inline-block;
+    margin-bottom: 15px;
+    max-width: 180px; /* Évite que le logo prenne tout l'écran */
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: border-color 0.2s;
+}
+
+.boutonecole:hover {
+    border-color: var(--blue-primary);
+}
+
+.boutonecole img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Titre du diplôme à l'intérieur de la carte */
+.etablissement h2 {
+    color: var(--blue-primary); /* Bleu acier */
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Description de la formation */
+.etablissement p {
+    font-size: 0.95rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   9. PAGE CENTRES D'INTÉRÊT (Grille alignée et affichage dynamique)
+   ========================================================================== */
+
+/* Titre principal de la page */
+body > div > h2 {
+    max-width: 1100px;
+    margin: 40px auto 30px auto; /* Légèrement réduit pour accueillir le média */
+    padding: 0 20px;
+    font-size: 1.8rem;
+    color: #0056b3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 5px solid var(--blue-primary);
+    padding-left: 15px;
+}
+
+ 
+/* ⚡ LA ZONE PHOTO INJECTÉE (3 PHOTOS EN LIGNE + DESCRIPTION EN DESSOUS) */
+.conteneur-media-interet {
+    max-width: 1200px; /* Aligné sur la largeur max de ta grille d'icônes */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;       /* ⚡ Permet au texte de sauter à la ligne en dessous des images */
+    justify-content: center;/* Centre les éléments horizontalement */
+    align-items: flex-start;
+    
+    /* Gestion de l'ouverture fluide */
+    max-height: 0; 
+    opacity: 0;
+    overflow: hidden; 
+    transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, margin 0.5s ease;
+}
+
+/* Classe active déclenchée en JS pour déployer l'image et pousser la grille */
+.conteneur-media-interet.visible {
+    max-height: 600px; 
+    opacity: 1;
+    margin-bottom: 50px; 
+  
+
+}
+
+/* Conteneur de CHAQUE image (Style Brut - Répartis sur une ligne) */
+.conteneur-media-interet .cadre-photo {
+    flex: 1 1 290px;       /* ⚡ S'adapte de façon fluide. Largeur de base autour de 250px par cadre */
+    max-width: 320px;      /* Évite que les photos deviennent géantes sur très grand écran */
+    height: 240px;         /* Hauteur fixe pour que les 3 cadres soient parfaitement alignés */
+    border: 3px solid #1a1e21;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0px #1a1e21; /* Légèrement réduit pour ne pas surcharger à trois */
+    transform: skewX(-2deg);
+    margin: 15px;          /* Espace régulier tout autour de chaque cadre */
+}
+
+.conteneur-media-interet .cadre-video {
+    flex: 1 1 350px;       /* ⚡ S'adapte de façon fluide. Largeur de base autour de 250px par cadre */
+    height: 400px;  
+    max-width: 800px;       /* Hauteur fixe pour que les 3 cadres soient parfaitement alignés */
+    border: 3px solid #1a1e21;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0px #1a1e21; /* Légèrement réduit pour ne pas surcharger à trois */
+    transform: skewX(-2deg);
+    margin: 15px;          /* Espace régulier tout autour de chaque cadre */
+}
+
+.conteneur-media-interet .cadre-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Remplissage propre sans déformer tes visuels */
+    display: block;
+}
+
+.conteneur-media-interet .cadre-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Remplissage propre sans déformer tes visuels */
+    display: block;
+}
+
+/* ⚡ Légende texte sous le bloc de photos */
+.conteneur-media-interet p {
+    width: 100%;           /* ⚡ FORCE le texte à prendre toute la largeur et donc à passer EN DESSOUS */
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 500;
+    text-align: center;
+    margin-top: 20px;      /* Crée une belle respiration sous les cadres */
+    padding: 0 40px;
+}
+
+/* Le conteneur global des icônes (qui réagit à la poussée) */
+.zonecentresinterets {
+    max-width: 1200px;
+    margin: 30px auto 80px auto; 
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    gap: 40px;
+    color: rgb(255, 255, 255);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Transition fluide lors du glissement */
+}
+
+
+/* Le bloc qui entoure le bouton */
+.interet {
+    flex: 0 1 240px;           
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Les boutons */
+.interet button {
+    width: 100%;
+    height: 200px;             
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.interet button img {
+    width: 140px;              
+    height: 140px;             
+    object-fit: contain;       
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* INTERACTIONS HOVER */
+.interet button:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue-primary);
+    box-shadow: 0 8px 20px rgba(0, 86, 179, 0.12);
+}
+
+.interet button:hover img {
+    transform: scale(1.08);    
+}
+
+.interet button:active {
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   11. PAGE COMPÉTENCES (Système de Demi-Roue et Splash Fixe)
+   ========================================================================== */
+
+.conteneur-competences {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px 40px 50px; /* Ajout d'un padding en bas pour éviter la fuite des marges */    
+    overflow-x: hidden; /* Évite un bug de défilement horizontal avec le splash */
+    height: 100%;  
+     
+}
+
+.conteneur-competences h2 {
+    font-size: 1.8rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 5px solid var(--blue-primary);
+    padding-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Grille principale corrigée (sans le padding-left parasite) */
+.zone-interactive-demiroue-p5-style{
+    display: flex;
+    position: relative;
+    min-height: 400px;
+    align-items: center;
+    justify-content: flex-end; /* Pousse la boîte de texte à droite */
+    padding-left: 0;           /* ⚡ CORRECTION : Supprime l'espace blanc à gauche */
+    margin: 40px auto;
+}
+
+/* 🟢 LE SPLASH EN ARRIÈRE-PLAN (FIXE) */
+.fond-destructure-competences {
+    position: absolute;
+    left: -190px;              /* Ajustement pour incruster le splash dans le bord gauche */
+    top: 50%;
+    transform: translateY(-50%); /* Centre verticalement le splash */
+    width: 550px;              /* Taille idéale pour entourer la roue */
+    height: 550px;
+    
+    background-image: url('splash.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    z-index: 1;                /* Se place derrière la roue */
+    pointer-events: none;      /* Permet de cliquer à travers l'image sans bloquer les boutons */
+}
+
+/* 🔵 LA DEMI-ROUE TOURNANTE (MILIEU) */
+.demi-roue {
+    position: absolute;
+    left: -200px;              /* ⚡ CORRECTION : Pile à la moitié de sa largeur pour épouser le bord */
+    top: calc(50% - 200px);    
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 3px double var(--border-color);
+    background-color: transparent;
+    
+    transform-origin: center center; 
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+    z-index: 2;                /* Devant le splash */
+}
+
+/* Style commun des boutons sur la roue */
+.comp-item-roue {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--surface-color);
+    border: 2px solid var(--border-color);
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px #1a1e21;
+    
+    transform-origin: center center;
+    transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+
+    /* Ajustement du centre du bouton */
+    margin-top: -45px;
+    margin-left: -45px;
+}
+
+/* POSITIONNEMENT EN ARC DE CERCLE (Moitié droite du cercle) */
+.comp-item-roue.r1 { top: 50%; left: 100%; }  /* À droite toute (0° / Est) */
+.comp-item-roue.r2 { top: 85%; left: 85%; }   /* Sud-Est */
+.comp-item-roue.r3 { top: 100%; left: 50%; }  /* En bas plein (90° / Sud) */
+.comp-item-roue.r4 { top: 85%; left: 15%; }   /* Sud-Ouest */
+
+/* Effet au survol d'un bouton */
+.comp-item-roue:hover {
+    border-color: var(--blue-primary);
+    color: var(--blue-primary);
+    background-color: var(--blue-light);
+}
+
+/* --- LA BOITE DE TEXTE STYLE MANGA/JEU (FIXE À DROITE) --- */
+.boite-explication-droite {
+    width: 100%;
+    max-width: 550px;
+    min-height: 220px;
+    background-color: var(--surface-color);
+    margin-right: 10%;
+    
+    /* ⚡ DESIGN BRUT : Bordure noire épaisse et solide */
+    border: 5px solid #1a1e21; 
+    border-radius: 4px; /* Coins plus tranchants et dynamiques */
+    padding: 35px;
+    
+    /* ⚡ DOUBLE NOIR FIXE : Ombre pleine, 100% opaque, sans aucun flou (0px) */
+    box-shadow: 8px 8px 0px #124f7e; 
+    
+    /* ⚡ DYNAMISME : Légère inclinaison en biais pour casser la rigidité du rectangle */
+    transform: skewX(-4deg) rotate(1deg);
+    
+    position: relative; 
+    z-index: 3; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol sur la boîte pour augmenter l'effet d'optique */
+.boite-explication-droite:hover {
+    transform: skewX(-4deg) rotate(1deg) translate(-2px, -2px);
+    box-shadow: 10px 10px 0px #1a1e21;
+}
+
+/* ⚡ REDRESSEMENT DU TEXTE À L'INTÉRIEUR */
+/* On contre-incline le texte pour qu'il reste parfaitement horizontal et lisible */
+.boite-explication-droite h3, 
+.boite-explication-droite p {
+    transform: skewX(4deg); 
+    position: relative;
+}
+
+.boite-explication-droite h3 {
+    color: var(--blue-primary);
+    font-size: 1.5rem;
+    font-weight: 900; /* Typographie très épaisse style impact */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.boite-explication-droite p {
+    color: var(--text-main);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* --- ANIMATIONS DE SWITCH --- */
+
+/* La classe qui sera injectée par le JS sur la boîte */
+.boite-explication-droite.activation-switch {
+    animation: pop-switch 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* L'animation de la boîte (elle rentre un peu vers l'intérieur puis reprend sa place avec force) */
+@keyframes pop-switch {
+    0% {
+        transform: skewX(-4deg) rotate(1deg) scale(0.96);
+        box-shadow: 2px 2px 0px #1a1e21;
+        border-color: var(--blue-primary);
+    }
+    50% {
+        transform: skewX(-4deg) rotate(1deg) scale(1.02);
+        box-shadow: 12px 12px 0px #1a1e21;
+    }
+    100% {
+        transform: skewX(-4deg) rotate(1deg) scale(1);
+        box-shadow: 8px 8px 0px #1a1e21;
+    }
+}
+
+/* L'animation du texte à l'intérieur (apparition fluide de bas en haut) */
+.boite-explication-droite h3,
+.boite-explication-droite p {
+    animation: fade-in 0.3s ease-out forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: skewX(4deg) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: skewX(4deg) translateY(0);
+    }
+}
+
+/* ==========================================================================
+   12. FENÊTRE POPUP / IFRAME (Parcours Scolaire)
+   ========================================================================== */
+
+/* Le fond noir semi-transparent qui couvre tout le site */
+.modal-iframe {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Assombrit l'arrière-plan */
+    z-index: 1000; /* Passe au-dessus de tout, même de la bannière */
+    justify-content: center;
+    align-items: center;
+}
+
+/* La boîte blanche au centre */
+.contenu-iframe {
+    background-color: var(--surface-color);
+    width: 85%;
+    height: 85%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid var(--blue-primary); /* Encadré bleu de ta DA */
+}
+
+/* Le bouton Fermer en haut de la fenêtre */
+.bouton-fermer {
+    background-color: #1a1e21;
+    color: white;
+    padding: 10px 20px;
+    text-align: right;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.bouton-fermer:hover {
+    background-color: var(--blue-primary); /* Devient bleu au survol */
+}
+
+/* L'iframe qui prend tout l'espace restant dans la boîte */
+.contenu-iframe iframe {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+    <title>Compétences</title> 
+    <link rel="stylesheet" href="styleCV.CSS">
+    <link rel="shortcut icon" href="logosite.png"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="compétences.js"></script> 
+    <script src="fadein.js"></script>
+</head>
+<body>
+    <style>
+        body{
+            background-image: url("IMG_8370.JPG");
+            background-size: 100% 101%; 
+        }
+    </style>
+
+    <div class="zonebanniere">
+        <div class="rangeeboutons">
+            <nav>
+                <a href="index.html" class="boutonBanniere">Accueil</a>
+                <a href="parcoursscolaire.html" class="boutonBanniere">Parcours Scolaire</a>
+                <a href="competences.html" class="boutonBanniere">Compétences</a>
+                <a href="centresinterets.html" class="boutonBanniere">Centres d'intérêts</a>
+                <a href="contact.html" class="boutonBanniere">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="conteneur-competences">
+        <h2>Mes compétences</h2>
+        
+        <div class="zone-interactive-demiroue-p5-style">
+            
+            <div class="fond-destructure-competences"></div>
+
+            <div class="demi-roue" id="maRoue">
+                <button class="comp-item-roue r1" onclick="tournerRoue(0, 'cao')">CAO</button>
+                <button class="comp-item-roue r2" onclick="tournerRoue(45, 'fao')">FAO</button>
+                <button class="comp-item-roue r3" onclick="tournerRoue(90, 'programmation')">Coding</button>
+                <button class="comp-item-roue r4" onclick="tournerRoue(135, 'gestion de projet')">Gestion de projet</button>
+            </div>
+
+            <div class="boite-explication-droite" id="zoneTexte">
+                <h3>Sélectionnez une compétence</h3>
+                <p>Cliquez sur un élément de la roue pour faire pivoter le sélecteur et afficher mes compétences.</p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+

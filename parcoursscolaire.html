@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>CV Fab</title> 
+    <link rel="stylesheet" href="styleCV.CSS">
+    <link rel="shortcut icon" href="logosite.png"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="parcours.js"></script> </head> 
+    <script src="fadein.js"></script>
+
+
+<body>
+
+    <style>
+    body {
+        background-image: url('IMG_7843(1).JPG');
+        background-size: 100% 100%;
+    }
+</style>
+
+<div class="zonebanniere">
+    <div class="rangeeboutons">
+        <nav>
+        <a href="index.html" class="boutonBanniere">Accueil</a>
+        <a href="parcoursscolaire.html" class="boutonBanniere">Parcours Scolaire</a>
+        <a href="competences.html" class="boutonBanniere">Compétences</a>
+        <a href="centresinterets.html" class="boutonBanniere">Centres d'intérêts</a>
+        <a href="contact.html" class="boutonBanniere">Contact</a>
+        </nav>
+    </div>
+</div>
+
+<div class="parcoursscolaire">
+    <h2 style="color:white">Parcours scolaire</h2>
+    
+    <div class="etablissement">
+        <a href="https://www-ensibs.univ-ubs.fr/" class="boutonecole" onclick="ouvrirIframe(event, this.href)">
+            <img src="logo ENSIBS.png" alt="image">
+        </a>
+        <h2>Diplôme d'Ingénieur Génie Industriel 4.0 en apprentissage</h2>
+        <p>L’ingénieur Génie Industriel 4.0, conçoit et gère des processus et des systèmes qui améliorent la qualité et la productivité de la chaîne de valeur des entreprises. Il s’attarde à mieux faire les choses en réduisant les risques pour l’homme et l’environnement.</p>
+    </div>
+
+    <div class="etablissement">
+        <a href="https://www.univ-tlse3.fr/decouvrir-nos-diplomes/but-specialite-genie-mecanique-et-productique" class="boutonecole" onclick="ouvrirIframe(event, this.href)">
+            <img src="OIP.jpg" alt="image">
+        </a>
+        <h2>BUT spécialité Génie mécanique et productique - parcours Management de process industriel</h2>
+        <p>Le Bachelor Génie Mécanique et Productique (GMP) forme aux fonctions d’encadrement technique et professionnel, dans toutes les étapes de la vie d’un produit.
+             La formation dispensée sur le site de Toulouse comprend une orientation Techniques Aérospatiales.</p>
+    </div>
+
+
+<div id="zoneIframe" class="modal-iframe">
+    <div class="contenu-iframe">
+        <span class="bouton-fermer" onclick="fermerIframe()"> X Fermer</span>
+        <iframe id="monIframe" src="" frameborder="0"></iframe>
+    </div>
+</div>
+
+</body>
+</html>

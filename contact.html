@@ -1,0 +1,70 @@
+<!DOCTYPE html> <html lang="fr"> 
+<head>  
+    <title>TP Web - Contact</title> 
+    <link rel="shortcut icon" href="logosite.png">
+    <link rel="stylesheet" href="styleCV.CSS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="fadein.js"></script>
+</head>
+<body>
+    <style>
+    body {
+        background-image: url('IMG_7843(1).JPG');
+        background-size: 100% 100%;
+    }
+</style>
+    
+
+<div class="zonebanniere">
+    <div class="rangeeboutons">
+        <nav>
+        <a href="index.html" class="boutonBanniere">Accueil</a>
+        <a href="parcoursscolaire.html" class="boutonBanniere">Parcours Scolaire</a>
+        <a href="competences.html" class="boutonBanniere">Compétences</a>
+        <a href="centresinterets.html" class="boutonBanniere">Centres d'intérêts</a>
+        <a href="contact.html" class="boutonBanniere">Contact</a>
+        </nav>
+    </div>
+</div>
+
+<div class="textecontacts">
+    <div class="textecontacts">
+        <h1>Contact</h1>
+    </div>
+
+    <div class="liens reseaux">
+        <a href="https://www.linkedin.com/in/fabian-chaverra-a75043296/" class="boutonreseau" target="_blank">
+            <img src="https://static.vecteezy.com/system/resources/previews/023/986/970/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt="logo linkedin" class="logo-linkedin">
+        </a>
+    </div>
+    <p>fabianchaverraco@gmail.com   |   06 19 86 76 08</p>
+</div>
+
+<div class="zoneformulaire">
+    <h3>Envoyez-moi un message</h3>
+    
+    <form action="https://formspree.io/f/{form_id}" method="post">
+        <ul>
+            <li>
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="user_name" required />
+            </li>
+            <li>
+                <label for="mail">E-mail :</label>
+                <input type="email" id="mail" name="user_mail" required />
+            </li>
+            <li>
+                <label for="msg">Message :</label>
+                <textarea id="msg" name="user_message" required></textarea>
+            </li>
+        </ul>
+        
+        <div class="button">
+            <button type="submit">Envoyer le message</button>
+        </div>
+    </form> 
+</div>
+
+</body>
+</html>
